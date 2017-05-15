@@ -1,0 +1,67 @@
+
+
+<div class="row" ng-controller="mainController">
+	<div class="col-md-12">
+
+		<!-- BEGIN SAMPLE TABLE PORTLET-->
+		<div class="portlet box red">
+			<div class="portlet-title">
+				<div class="caption">
+					{{table_name}}
+				</div>
+				<div class="tools">
+					<a href="#" ng-click="showModalforNew($event)"><i class="fa fa-plus" aria-hidden="true"> Add New</i></a>
+				</div>
+			</div>
+			<div class="portlet-body">
+				<div class="table-scrollable">
+					<table class="table table-hover">
+					<thead>
+					<tr>
+						<th>
+							 Name
+						</th>
+						<th>
+							 Symbol
+						</th>
+						<th>
+							 Price
+						</th>
+						<th>
+							 Date
+						</th>
+						<th>
+							 Actions
+						</th>
+					</tr>
+					</thead>
+					<tbody ng-repeat="stock in stocks">
+					<tr>
+
+						<td>
+							 {{stock.name}}
+						</td>
+						<td>
+							 {{stock.symbol}}
+						</td>
+						<td>
+							 {{stock.price}}
+						</td>
+						<td>
+							 {{stock.date | date}}
+						</td>
+						<td>
+							<a href="#" ng-click="editStock(stock,$event)" ><i class="fa fa-pencil" id="edit" aria-hidden="true"></i></a>
+							<a href="#" ng-click="deleteStock(stock._id, $event)"><i class="fa fa-trash"  id="trash" aria-hidden="true"></i></a>
+						</td>
+
+					</tr>
+
+					</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
